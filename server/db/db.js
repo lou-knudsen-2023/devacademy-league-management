@@ -8,6 +8,8 @@ module.exports = {
   getPlayers,
   getPlayer,
   getPlayersByTeam,
+  addPlayerToTeam,
+  removePlayerFromTeam,
 }
 
 function getPlayers(db = connection) {
@@ -32,4 +34,14 @@ function getTeams(db = connection) {
 
 function getTeam(id, db = connection) {
   return db('teams').where('id', id).first()
+}
+
+function addPlayerToTeam(playerId, newTeamId, db = connection) {
+  return db('players')
+    .where('id', playerId)
+    .update({ team_id: newTeamId }, ['name', 'team_id'])
+}
+
+function removePlayerFromTeam(id, db = connection) {
+  return addPlayerToTeam(id, 0, db)
 }
