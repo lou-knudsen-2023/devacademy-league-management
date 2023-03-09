@@ -11,19 +11,19 @@ beforeEach(() => {
 
 afterEach(() => testEnv.cleanup(testDb))
 
-test('getUsers gets all users', () => {
+test('getTeams gets all teams', () => {
   // One for each letter of the alphabet!
   const expected = 3
   return db
-    .getUsers(testDb)
-    .then((users) => {
-      const actual = users.length
+    .getTeams(testDb)
+    .then((teams) => {
+      const actual = teams.length
       expect(actual).toBe(expected)
     })
     .catch((err) => expect(err).toBeNull())
 })
 
-test('getUser gets a single user', () => {
+test('getTeam gets a single team', () => {
   const expected = 'test user 1'
   return db
     .getUser(99901, testDb)
