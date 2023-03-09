@@ -1,6 +1,6 @@
 const express = require('express')
 const hbs = require('express-handlebars')
-
+const db = require('./db/db.js')
 // const userRoutes = require('./routes/users')
 
 const server = express()
@@ -17,8 +17,12 @@ server.set('views', __dirname + '/views')
 
 // Routes
 server.get('/', (req, res) => {
-    res.render('league_home')
+  return db.getTeams().then((teams) => {
+    const obj = {
+      teams,
+    }
+    res.render('league_home', teams)
+  })
 })
-
 
 module.exports = server
