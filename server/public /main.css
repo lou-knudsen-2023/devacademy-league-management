@@ -4,7 +4,9 @@
   }
   
 html {
-    background-image: url ('https://img.freepik.com/free-photo/bloody-grunge-background-ideal-halloween_1048-14641.jpg?w=900&t=st=1678396528~exp=1678397128~hmac=ffaa561ba17c9de5867c1060a12aaaa2c2c2e310cc4d4adbc7c726601157d914');
+
+    background-image: url('https://img.freepik.com/free-photo/bloody-grunge-background-ideal-halloween_1048-14641.jpg?w=900&t=st=1678396528~exp=1678397128~hmac=ffaa561ba17c9de5867c1060a12aaaa2c2c2e310cc4d4adbc7c726601157d914') no-repeat center center fixed;
+    background-size: cover;
   }
   
   
@@ -28,4 +30,12 @@ a:link, a:visited  {
   
   a:hover {
     color: #B80C09;
+  }
+
+  container {
+
+  }
+
+  h1 {
+    color: red;
   }
