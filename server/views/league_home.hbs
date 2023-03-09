@@ -8,11 +8,11 @@
 <ul class="cards">
   {{#each teams}}
   <li class="container">
-    <div class="event">
+    <div class="teams">
       <span class="title">{{team_name}}</span>
-      <div class="time-location">
-        <p>Location: <span class="data">{{locationName}}</span></p>
-        <p>Time: <span class="data">{{time}}</span></p>
+        <p>Team name:{{team_name}} 
+        <p>Date established: {{date_established}}</p>
+        <p>This team was indicted for: {{indicted_for}}</p>
       </div>
     </div>
     <p class="event-description data">{{description}}</p>
