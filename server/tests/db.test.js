@@ -40,7 +40,7 @@ test('getTeam gets a single team', () => {
 })
 
 test('getPlayers gets all players', () => {
-  return db.getPlayers().then((players) => {
+  return db.getPlayers(testDb).then((players) => {
     expect(players).toHaveLength(15)
   })
 })
