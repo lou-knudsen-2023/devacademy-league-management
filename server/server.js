@@ -6,7 +6,7 @@ const hbs = require('express-handlebars')
 const server = express()
 
 // Middleware
-server.use(express.static(__dirname + '/server/public'))
+server.use(express.static(__dirname + '/public'))
 server.use(express.urlencoded({ extended: true }))
 
 // server.use('/players', userRoutes) //----Ryan this is where the routes will go

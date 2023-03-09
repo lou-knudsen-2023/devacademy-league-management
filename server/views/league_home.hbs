@@ -1,4 +1,23 @@
 {{!-- {{> navigation}} --}}
 
-<h1> TEST</h1>
+<h1> Welcome to the league</h1>
+
+<h2>Teams: <span class="data">{{day}}</span></h2>
+<a class="nav" href="/events/add/{{day}}">add event</a>
+
+<ul class="cards">
+  {{#each events}}
+  <li class="container">
+    <div class="event">
+      <span class="title">{{eventName}}</span>
+      <div class="time-location">
+        <p>Location: <span class="data">{{locationName}}</span></p>
+        <p>Time: <span class="data">{{time}}</span></p>
+      </div>
+    </div>
+    <p class="event-description data">{{description}}</p>
+    <a href="/events/{{id}}/edit">edit event</a>
+  </li>
+  {{/each}}
+</ul>
 
