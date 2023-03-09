@@ -5,7 +5,7 @@ exports.seed = function (knex) {
       team_name: 'unsigned',
       description: 'Placeholder team for unsigned players',
       date_established: '2030',
-      indicited_for: 'Environmental degradation',
+      indicted_for: 'Environmental degradation',
     },
     {
       id: 1,
@@ -13,7 +13,7 @@ exports.seed = function (knex) {
       description:
         'A once famous music group known for cheesy love songs and male sex appeal',
       date_established: '1993',
-      indicited_for:
+      indicted_for:
         'The degradation of popular music, failing to act on climate change',
     },
     {
