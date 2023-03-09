@@ -3,14 +3,33 @@ const config = require('./knexfile')[environment]
 const connection = require('knex')(config)
 
 module.exports = {
-  getUser: getUser,
-  getUsers: getUsers,
+  getTeams,
+  getTeam,
+  getPlayers,
+  getPlayer,
+  getPlayersByTeam,
 }
 
-function getUsers(db = connection) {
-  return db('users').select()
+function getPlayers(db = connection) {
+  return db('players').select()
 }
 
-function getUser(id, db = connection) {
-  return db('users').where('id', id).first()
+// Join with team so we can display team name
+function getPlayer(id, db = connection) {
+  return db('players')
+    .where({ id })
+    .first('players.*', 'teams.team_name') // Is this line valid?
+    .join('teams', 'teams.id', 'team_id')
+}
+
+function getPlayersByTeam(team_id, db = connection) {
+  return db('players').where({ team_id }).select()
+}
+
+function getTeams(db = connection) {
+  return db('teams').select()
+}
+
+function getTeam(id, db = connection) {
+  return db('teams').where('id', id).first()
 }
