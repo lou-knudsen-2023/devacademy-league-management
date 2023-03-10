@@ -10,13 +10,13 @@
       <span class="title">{{name}}</span>
         <p>Name: {{name}}</p>
         <p>Age: {{age}}</p>
-    </div>
     <p class="event-description data">{{biography}}</p>
+    </div>
     {{!-- <a href="/events/{{id}}/edit">edit event</a> --}}
   </li>
   {{/each}}
 </ul>
 
-<button>Edit team</button>
+<a href="/{{team.id}}/team/edit">Manage players</a>
 
 
