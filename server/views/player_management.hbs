@@ -1,0 +1,14 @@
+<form action="" method="post">
+  <p>Select players to release:</p>
+  {{#each team_players}}
+  <input type="checkbox" name="released" id="{{name}}" value="{{id}}">
+  <label for="{{name}}">{{name}}</label>
+  <br>
+  {{/each}}
+  <label for="signed">Select players to sign</label>
+  <select name="signed" id="signed" multiple>
+    {{#each unsigned_players}}
+    <option value="{{id}}">{{name}}</option>
+    {{/each}}
+  </select>
+</form>
