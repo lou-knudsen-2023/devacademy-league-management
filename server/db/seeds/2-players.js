@@ -85,5 +85,41 @@ exports.seed = function (knex) {
       biography: 'A baby, known for her love of her pacifier',
       age: 0,
     },
+    {
+      id: 15,
+      team_id: 0,
+      name: 'Sleve McDichael',
+      biography:
+        'Once responded to "There is no I in team" with "But there is in Win"',
+      age: 18,
+    },
+    {
+      id: 16,
+      team_id: 0,
+      name: 'Onson Sweemey',
+      biography: 'Purchaser of bottled water',
+      age: 32,
+    },
+    {
+      id: 17,
+      team_id: 0,
+      name: 'Darryl Archideld',
+      biography: 'Spotted reading The Art of Not Giving a F**k',
+      age: 23,
+    },
+    {
+      id: 18,
+      team_id: 0,
+      name: 'Anatoli Smorin',
+      biography: 'Autarky activist',
+      age: 25,
+    },
+    {
+      id: 19,
+      team_id: 0,
+      name: 'Rey Mcsriff',
+      biography: "Didn't see the point in composting",
+      age: 53,
+    },
   ])
 }
