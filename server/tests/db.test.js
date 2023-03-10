@@ -11,25 +11,36 @@ beforeEach(() => {
 
 afterEach(() => testEnv.cleanup(testDb))
 
-test('getUsers gets all users', () => {
+test('getTeams gets all teams', () => {
   // One for each letter of the alphabet!
-  const expected = 3
   return db
-    .getUsers(testDb)
-    .then((users) => {
-      const actual = users.length
-      expect(actual).toBe(expected)
+    .getTeams(testDb)
+    .then((teams) => {
+      expect(teams).toHaveLength(4)
     })
     .catch((err) => expect(err).toBeNull())
 })
 
-test('getUser gets a single user', () => {
-  const expected = 'test user 1'
+test('getTeam gets a single team', () => {
+  const expected = {
+    id: 1,
+    team_name: 'Backstreet Boys',
+    description:
+      'A once famous music group known for cheesy love songs and male sex appeal',
+    date_established: '1993',
+    indicted_for:
+      'The degradation of popular music, failing to act on climate change',
+  }
   return db
-    .getUser(99901, testDb)
-    .then((user) => {
-      const actual = user.name
-      expect(actual).toBe(expected)
+    .getTeam(1, testDb)
+    .then((team) => {
+      expect(team).toEqual(expected)
     })
     .catch((err) => expect(err).toBeNull())
+})
+
+test('getPlayers gets all players', () => {
+  return db.getPlayers(testDb).then((players) => {
+    expect(players).toHaveLength(15)
+  })
 })
