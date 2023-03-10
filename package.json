@@ -11,7 +11,7 @@
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "lint:fix": "eslint . --fix",
     "format": "prettier -w '**/*.{js,jsx,ts,tsx}'",
-    "build": "knex migrate:latest"
+    "build": "npm run knex migrate:latest && npm run knex seed:run"
   },
   "repository": {
     "type": "git",
