@@ -1,1 +1,20 @@
-<h1>Teams</h1>
+<h1> Welcome to the {{team.team_name}} team page</h1>
+
+{{!-- <h2>Team: <span class="data">{{day}}</span></h2> --}}
+<a class="nav" href="">Edit team info</a>
+
+<ul class="cards">
+  {{#each players}}
+  <li class="container">
+    <div class="teams">
+      <span class="title">{{name}}</span>
+        <p>Name: {{name}}</p>
+        <p>Age: {{age}}</p>
+    </div>
+    <p class="event-description data">{{biography}}</p>
+    {{!-- <a href="/events/{{id}}/edit">edit event</a> --}}
+  </li>
+  {{/each}}
+</ul>
+
+

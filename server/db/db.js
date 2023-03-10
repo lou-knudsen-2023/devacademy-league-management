@@ -19,7 +19,7 @@ function getPlayers(db = connection) {
 // Join with team so we can display team name
 function getPlayer(id, db = connection) {
   return db('players')
-    .where({ id })
+    .where('players.id', id)
     .first('players.*', 'teams.team_name') // Is this line valid?
     .join('teams', 'teams.id', 'team_id')
 }
@@ -29,7 +29,7 @@ function getPlayersByTeam(team_id, db = connection) {
 }
 
 function getTeams(db = connection) {
-  return db('teams').select()
+  return db('teams').select().where('id', '>', 0)
 }
 
 function getTeam(id, db = connection) {
