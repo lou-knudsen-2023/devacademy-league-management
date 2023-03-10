@@ -29,7 +29,7 @@ function getPlayersByTeam(team_id, db = connection) {
 }
 
 function getTeams(db = connection) {
-  return db('teams').select()
+  return db('teams').select().where('id', '>', 0)
 }
 
 function getTeam(id, db = connection) {
