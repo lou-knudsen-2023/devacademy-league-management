@@ -1,9 +1,6 @@
   html {
-
     margin: 0;
     padding: 0;
-
-    
   }
   
   
@@ -23,8 +20,8 @@
   }
   
   a:link, a:visited  {
-    color: #ffffff;
     text-decoration: none;
+    color: inherit;
   }
   
   a:hover {
@@ -42,12 +39,12 @@
   }
 
 .cards {
-  background-color: #ECF6FA;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   margin: 0 3rem 2rem 3rem;
+  padding: 25px;
 }
 
 .container {
@@ -56,10 +53,11 @@
   background-position: center top 10px;
   background-color: #ECF6FA;
   box-shadow: 5px 5px 15px #999;
-  padding: 15px;
+  padding: 40px;
   margin: 10px;
   width: 209px;
   list-style: none;
+
 }
 
 h2 {
@@ -79,4 +77,14 @@ h2 {
   margin-top: 80px;
   border-top: 3px solid #AFC2D5;
   padding-top: 10px;
+}
+
+button {
+  width: 100px;
+  height: 30px;
+  color: white;
+  border: 2px solid rgb(147, 147, 185);
+  background-color:#ac0303;
+  justify-content: center;
+  display: center;
 }

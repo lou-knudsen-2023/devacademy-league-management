@@ -7,15 +7,20 @@
 
 <ul class="cards">
   {{#each teams}}
-  <li class="container">
-    <div class="teams">
-      <span class="title">{{team_name}}</span>
-        <p>Date established: {{date_established}}</p>
-        <p>This team was indicted for: {{indicted_for}}</p>
-    </div>
-    <p class="event-description data">{{description}}</p>
+    <a href='/{{id}}/team'>
+    <li class="container">
+        <div class="teams">
+        <span class="title">{{team_name}}</span>
+            <p><strong>Date established:</strong> {{date_established}}</p>
+            <p><strong>This team was indicted for:</strong> {{indicted_for}}</p>
+            <p class="event-description data">{{description}}</p>
+        </div>
     {{!-- <a href="/events/{{id}}/edit">edit event</a> --}}
   </li>
+    </a>
   {{/each}}
 </ul>
 
+<div >
+<button>Add team</button>
+</div>
