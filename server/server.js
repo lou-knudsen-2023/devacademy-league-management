@@ -21,7 +21,8 @@ server.get('/', (req, res) => {
     const obj = {
       teams,
     }
-    res.render('league_home', teams)
+    console.log(obj)
+    res.render('league_home', obj)
   })
 })
 
