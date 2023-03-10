@@ -42,5 +42,18 @@ server.get('/:id/team', (req, res) => {
       res.render('team', data)
     })
 })
+
+server.get('/:id/team/edit', (req, res) => {
+  const incomingData = {
+    id: Number(req.params.id),
+    newTeam: req.body.signed,
+    removeId: req.body.released,
+  }
+  const promises= incomingData.removeId.split(',').map((e) => {
+    return db.removePlayerFromTeam(e)
+  })
+
+  Promise.all(promises).then(() ).c
+})
 //pass to team view the team, array of players for that team
 module.exports = server
