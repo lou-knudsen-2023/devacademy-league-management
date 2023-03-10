@@ -21,9 +21,26 @@ server.get('/', (req, res) => {
     const obj = {
       teams,
     }
-    console.log(obj)
     res.render('league_home', obj)
   })
 })
 
+server.get('/:id/team', (req, res) => {
+  const id = Number(req.params.id)
+  const data = {}
+  return db
+    .getTeam(id)
+    .then((team) => {
+      data.team = team
+    })
+    .then(() => {
+      return db.getPlayersByTeam(data.team.id)
+    })
+    .then((players) => {
+      data.players = players
+      console.log(data)
+      res.render('team', data)
+    })
+})
+//pass to team view the team, array of players for that team
 module.exports = server
