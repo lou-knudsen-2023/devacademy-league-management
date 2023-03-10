@@ -41,7 +41,7 @@ test('getTeam gets a single team', () => {
 
 test('getPlayers gets all players', () => {
   return db.getPlayers(testDb).then((players) => {
-    expect(players).toHaveLength(15)
+    expect(players).toHaveLength(20)
   })
 })
 
@@ -79,15 +79,15 @@ test('getPlayersByTeam gets all players from one team', () => {
   })
 })
 
-test("addPlayerToTeam sets a player's team_id correctly", () => {
-  return db.addPlayerToTeam(12, 2, testDb).then(([{ team_id }]) => {
+test("addPlayersToTeam sets a player's team_id correctly", () => {
+  return db.addPlayersToTeam([12], 2, testDb).then(([{ team_id }]) => {
     expect(team_id).toBe(2)
   })
 })
 
-test("removePlayerFromTeam sets a player's team_id to 0", () => {
+test("removePlayersFromTeam sets a player's team_id to 0", () => {
   return db
-    .removePlayerFromTeam(12, testDb)
+    .removePlayersFromTeam([12], testDb)
     .then(() => db.getPlayer(12, testDb))
     .then((player) => {
       expect(player.team_id).toBe(0)
